@@ -17,7 +17,7 @@
  A <code>run</code> folder must contain the parameter XML file. It can also contains the initial configuration file, as in this example <code>init.txt</code>. The two output subfolders <code>output</code> and <code>microutput</code> that will be used by <code>PhysiBoSS</code> to write the results files must be present.</li>
 </ul>
 <p>Below is the image of the folder organization for this example provided with this distribution: 
-<img src="https://github.com/gletort/PhysiBoSS/blob/master/doc/imgs/folders.png" alt="Input simulation folder and files organization" width="500"/>
+<img src="https://github.com/sysbio-curie/PhysiBoSS/blob/master/doc/imgs/folders.png" alt="Input simulation folder and files organization" width="500"/>
  
 <h2>Run the simulation</h2>
 <p>To run the simulation, open a Terminal window in the (here <code>run0</code>) folder of the simulation and call <code>PhysiBoSS</code> executable: </p>
