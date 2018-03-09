@@ -32,5 +32,5 @@
 
 <h2>Visualize the results</h2>
 <p>To visualize 3D+t results of the simulations, we used the software <code>Paraview</code> which allows for high flexibility and intereactive viewing options. In the files available for this example, the state file <code>example_spheroid_TNF.pvsm</code> contains the setting-up of paraview to draw the output files in 3D view. To use it, open <code>Paraview</code>, click on <code></code>( File -&gt; Load State...) and select the state file <code>example_spheroid_TNF.pvsm</code>. Then a window to choose the files to visualize will pop up, select in the output folder of the simulation the cells files stack. See the image below for an example of how using <code>Paraview</code> look with our state file proposed on this example:</p>
-<img src="https://github.com/gletort/PhysiBoSS/blob/master/doc/imgs/example_spheroid_visu.png" alt="Visualization of this example results" width="800"/>
+<img src="https://github.com/sysbio-curie/PhysiBoSS/blob/master/doc/imgs/example_spheroid_visu.png" alt="Visualization of this example results" width="800"/>
 
