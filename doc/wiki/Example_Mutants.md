@@ -84,4 +84,4 @@ In this example, we have 3 cell lines, one without mutations (WT, blue); one wit
 <h2>Results</h2>
 <p>Below are snapshots of the simulation that you should obtain by re-running it and visualizing it with our customized paraview state file. Cells of the first cell line (WT) are in blue, cells of the second cell line (CASP8 inhibited) are in white, cells of the third cell line (CASP8 over-expressed) are in red. 
 As expected, red cells are comitted to apoptosis under TNF treatment and disappear fast, while white cells proliferate and some WT cells (blue) resisted. </p>
-<img src="https://github.com/gletort/PhysiBoSS/blob/master/doc/imgs/example_mutants.png" alt="Example results" width="800"/>
+<img src="https://github.com/sysbio-curie/PhysiBoSS/blob/master/doc/imgs/example_mutants.png" alt="Example results" width="800"/>
