@@ -33,5 +33,5 @@ It also contains the file <code>ecm.txt</code> which defines the repartition of 
 <p>To visualize 3D+t results of the simulations, we used the software <code>Paraview</code> which allows for high flexibility and intereactive viewing options. In the files available for this example, the state file <code>withECM.pvsm</code> contains the setting-up of paraview to draw the output files in 3D view. To use it, open <code>Paraview</code>, click on <code></code>( File -&gt; Load State...) and select the state file <code>withECM.pvsm</code>. Then a window to choose the files to visualize will pop up, with two rows. In the first row, select the output folder of the simulation the cells files stack. In the second row, select in the <code>microutput</code> folder the ecm files stack. </p>
 <p>
 Below are snapshots of the results of the simulation. Colors indicates the amount of cell motility magnitude, and in black ECM density is represented. </br>
-<img src="https://github.com/gletort/PhysiBoSS/blob/master/doc/imgs/example_cells_with_ECM.png" alt="example results" width="800"/>
+<img src="https://github.com/sysbio-curie/PhysiBoSS/blob/master/doc/imgs/example_cells_with_ECM.png" alt="example results" width="800"/>
 </p>
