@@ -57,4 +57,4 @@ The format of this initial file is dictated by the format of the output files: a
 
 <h2>Results</h2>
 <p>Below are snapshots of the simulation that you should obtain by re-running it and visualizing it with our customized paraview state file: </p>
-<img src="https://github.com/gletort/PhysiBoSS/blob/master/doc/imgs/example_hello_world.png" alt="Example results" width="800"/>
+<img src="https://github.com/sysbio-curie/PhysiBoSS/blob/master/doc/imgs/example_hello_world.png" alt="Example results" width="800"/>
