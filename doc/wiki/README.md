@@ -5,7 +5,7 @@ Presentation</h1>
 <p><br/>
 </p>
 
-![](https://github.com/gletort/PhysiBoSS/blob/master/doc/imgs/hello.png "PhysiCell-MaBoSS example")
+![](https://github.com/sysbio-curie/PhysiBoSS/blob/master/doc/imgs/hello.png "PhysiCell-MaBoSS example")
 
 <p> <br/>
 
@@ -54,7 +54,7 @@ It will generate the documentation files in the 'doc/html' folder (initially emp
 Running one simulation</h2>
 <p>An 'output' and 'microutput' directories should be present in the main directory of the simulation from which the executable will be called. Ideal structure would be to have a simulation directory containing the parameter file (e.g. <code>parameter.xml</code>), the initial configuration file (optional, e.g. <code>init.txt</code>) and the outputs folder. Informations files will be created in this directory (<code>report.txt</code>). Information on how the simulation is running (initialisation completed or not, current time, wall time) are printed to the terminal, we redirected them to the file <code>msg.txt</code> when running them using an automated script. <code>Report.txt</code> gives a quick summary of the simulation, with the number of cells that divided or died in between output times. In the folder 'output', txt files named 'cells_' followed by the time value are generated during the simulation, containing the current cells states (position/size/cycle state).</p>
 
-![](https://github.com/gletort/PhysiBoSS/blob/master/doc/imgs/simulation.png "Simulation organization")
+![](https://github.com/sysbio-curie/PhysiBoSS/blob/master/doc/imgs/simulation.png "Simulation organization")
 
  <h3><a class="anchor" id="sub0"></a>
 Input parameter file</h3>
@@ -89,7 +89,7 @@ Create initial file</h2>
 <p>Simulation can be loaded from a given initial file containing the position of all initial cells, their state, size... With <code>PhysiBoSS</code> code, an executable <code>PhysiBoSS_CreateInitTxtFile</code> is given, which allows the user to create a .txt file containing those informations for given parameters and chosen modes (e.g. a sphere of radius 300 µm). See the page PhysiBoSS_CreateInitTxtFile for more informations on what it can do and how to use it.</p>
 <p>It's also possible to create a custom initial file from a binary image like it was done to generate the initial state of the example image above. <br/>
 For this, we can use use an output of a previous simulation as the input initial file or build our own using semi-colon separated (';') columns such as: Time;ID;x;y;z;radius;volumetotal;volumenuclearsolid, etc. 
-Additionally, we have made an R script that generates such a file from the list of positive pixels in a binary image (that can be generated with ImageJ) <a class="el" href="https://github.com/gletort/PhysiBoSS/blob/master/scripts/presimu/prepareInitialFileFromBinary.R/">available here</a>. </p>
+Additionally, we have made an R script that generates such a file from the list of positive pixels in a binary image (that can be generated with ImageJ) <a class="el" href="https://github.com/sysbio-curie/PhysiBoSS/blob/master/scripts/presimu/prepareInitialFileFromBinary.R/">available here</a>. </p>
 <h2><a class="anchor" id="sub2"></a>
 Plot a given time point</h2>
 <p>The executable <code>PhysiBoSS_Plot</code> given with the release allows the user to plot a specific time point of the simulation after it has run, directly from the command line. The time point must have been saved in the 'output' directory, and the plot will be a .svg file. Several options can be specified to <code>PhysiBoSS_Plot</code>, as can be seen at PhysiBoSS_Plot page.</p>
@@ -97,7 +97,7 @@ Plot a given time point</h2>
 Visualization</h2>
 <p>To visualize time evolution of 3D simulation results, we used the software <code>Paraview</code> which allows high flexibility and interactive viewing options. We provide within <code>PhysiBoSS</code> release several paraview state files to directly set-up the visualization of <code>PhysiBoSS</code> output files on <code>Paraview</code>. See the image below for an example of how a typical <code>PhysiBoSS</code> result looks in <code>Paraview</code> with our state files:</p>
 
-![](https://github.com/gletort/PhysiBoSS/blob/master/doc/imgs/paraview.png "Visualization with Paraview")
+![](https://github.com/sysbio-curie/PhysiBoSS/blob/master/doc/imgs/paraview.png "Visualization with Paraview")
 
 <p>
 If you have issues using our state files or if you want to modify the initial set-up, the steps to visualize the output files as spheres in Paraview are explained at the Paraviewing page.
