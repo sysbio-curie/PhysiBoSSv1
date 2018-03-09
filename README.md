@@ -87,14 +87,15 @@ To visualize graphically the result of a simulation, with use the software Parav
 
 ## Remarks
 
-Please, refer to the [Wiki](https://github.com/gletort/PhysiBoSS/wiki) of this repository for a much more extended documentation, with step by step examples instructions. 
+Please, refer to the [documentation section](https://github.com/sysbio-curie/PhysiBoSS/tree/master/doc/wiki) of this repository for a much more extended description, with step by step examples instructions. 
  
-PhysiCell is developed in [Paul Macklin's lab](http://mathcancer.org). 
-MaBoSS and PhysiBoSS are developed in the [Computational Systems Biology of Cancer group](http://sysbio.curie.fr) at Institut Curie (Paris, France). 
+PhysiCell is developed in [Paul Macklin's lab](http://mathcancer.org) at Indiana University (Bloomington, USA).
+MaBoSS and PhysiBoSS are developed in the [Computational Systems Biology of Cancer group](http://sysbio.curie.fr) at Institut Curie (Paris, France).
 
-We invit you to use PhysiBoSS for you research and give feedbacks to us. Any help in developing it further is more than welcome.
+We invite you to use PhysiBoSS for you research and give feedbacks to us. Any help in developing it further is more than welcome.
 Do not hesitate to contact us for any comments or difficulties in using PhysiBoSS: physiboss@gmail.com.
 
+This repository can be referred to with its own DOI: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1194827.svg)](https://doi.org/10.5281/zenodo.1194827)
 
 Wishing you to enjoy using PhysiBoSS, 
 
