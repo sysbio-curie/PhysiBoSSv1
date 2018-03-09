@@ -40,4 +40,4 @@ A <code>run</code> folder must contain the parameter XML file. It can also conta
 
 <h2>Results</h2>
 <p>Below are snapshots of the simulation that you should obtain by re-running it and visualizing it with our customized paraview state file. Cells of the first cell line (the most adhesive one) are in blue, cells of the second cell line are in red. Transparent grey spheres are the passive spheres. First row of the figure correspond to snapshots of the simulation in <code> run0 </code> folder, so when the blue cell line doesn't adhere to the ECM. In the second row, it is the results of the <code>run1</code> folder, blue cells can adhere to ECM. </p>
-<img src="https://github.com/gletort/PhysiBoSS/blob/master/doc/imgs/example_cell_sorting.png" alt="Example results" width="800"/>
+<img src="https://github.com/sysbio-curie/PhysiBoSS/blob/master/doc/imgs/example_cell_sorting.png" alt="Example results" width="800"/>
