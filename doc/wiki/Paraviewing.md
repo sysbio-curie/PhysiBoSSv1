@@ -54,4 +54,4 @@ Now the settings are finished, and you should obtain the image below.
 You can then choose the coloring of the cells according to one field (e.g. phase to see cell phase), change the colors scales, the background...
 
 ## Save image or make movie
-To save the current visualisation as an image, go to `File->Save screenshot...`. To make a movie of all the time frames with the current setup, go to `File->Save Animation...` which will then write an image for each time point, in the same folder with the given name. To convert the stack of images to a movie, you can for example use `ffmpeg` with this [script](https://github.com/gletort/scripts/blob/master/seeing/movise.sh).
+To save the current visualisation as an image, go to `File->Save screenshot...`. To make a movie of all the time frames with the current setup, go to `File->Save Animation...` which will then write an image for each time point, in the same folder with the given name. To convert the stack of images to a movie, you can for example use `ffmpeg` with this [script](https://github.com/sysbio-curie/scripts/blob/master/seeing/movise.sh).

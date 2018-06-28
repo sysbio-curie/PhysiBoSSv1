@@ -11,14 +11,14 @@ You might also have to change your c++ compiler in the Makefile according to you
 
 Commands list:
 ~~~bash
-git clone https://github.com/gletort/PhysiBoSS.git
+git clone https://github.com/sysbio-curie/PhysiBoSS.git
 cd PhysiBoSS
 make install
 ~~~
 
 If it doesn't work, make it step by step until you reach the error:
 ~~~bash
-git clone https://github.com/gletort/PhysiBoSS.git
+git clone https://github.com/sysbio-curie/PhysiBoSS.git
 cd PhysiBoSS
 cd MaBoSS
 make clean
@@ -42,4 +42,4 @@ NB: in MacOS system, on run time, you might get the warning `Warning: non reentr
 
 
 ## Errors still not fixed
-If you still cannot compile PhysiBoSS after trying our suggestions, please don't hesitate to contact us or create an issue request. And/or don't hesitate to use the [Docker image](https://github.com/gletort/PhysiBoSS/tree/master/Docker) !
+If you still cannot compile PhysiBoSS after trying our suggestions, please don't hesitate to contact us or create an issue request. And/or don't hesitate to use the [Docker image](https://github.com/sysbio-curie/PhysiBoSS/tree/master/Docker) !
