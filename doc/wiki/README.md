@@ -39,7 +39,7 @@ Compiling PhysiBoSS</h2>
 <p>First, clone the PhysiBoSS repository, and compile it by going into the <code>PhysiBoSS</code> directory and type <code>make install</code>. The executables will be created in the <code>bin</code> directory if all goes well. It requires a recent version of c++, at least c++11. <code>PhysiBoSS</code> can be compiled in Debug, Release or Proliling modes, to set in the <code>Makefile</code> file, default is Release mode which is the fastest one.</p>
 <p> Summary of the steps to download and install PhysiBoSS on Linux system:
 <pre>
-git clone https://github.com/gletort/PhysiBoSS.git
+git clone https://github.com/sysbio-curie/PhysiBoSS.git
 cd PhysiBoSS
 make install
 </pre>
