@@ -1,0 +1,206 @@
+Node PTEN {
+  logic = (PTEN);
+  rate_up = $u_PTEN;
+  rate_down = $d_PTEN;
+}
+
+Node TCR_b1 {
+  rate_up = $u_TCR_b1;
+  rate_down = TCR_b2 ? 0 : $d_TCR_b1;
+}
+
+Node TCR_b2 {
+  rate_up = TCR_b1 ? $u_TCR_b2 : 0;
+  rate_down = $d_TCR_b2;
+}
+
+Node CD28 {
+  rate_up = $u_CD28;
+  rate_down = $d_CD28;
+}
+
+Node PI3K_b1 {
+	rate_up = (CD28 & (IL2R_b1 | TCR_b1)) ? $u_PI3K_b1 : 0.0 ;
+	rate_down = (CD28 & (IL2R_b1 | TCR_b1) & PI3K_b2) ? 0.0 : $d_PI3K_b1 ;
+}
+
+Node PI3K_b2 {
+	rate_up = (CD28 & (IL2R_b2 | TCR_b2) & PI3K_b1) ? $u_PI3K_b2 : 0.0 ;	
+	rate_down = (CD28 & (IL2R_b2 | TCR_b2)) ? 0.0 : $d_PI3K_b2 ;	 	
+}
+
+Node PIP3 {
+  logic = (!PTEN & PI3K_b1) | (PTEN & PI3K_b1 & PI3K_b2);
+  rate_up = @logic ? $u_PIP3 : 0;
+  rate_down = @logic ? 0 : $d_PIP3;
+}
+
+Node AKT1 {
+  logic = (PIP3);
+  rate_up = @logic ? $u_AKT1 : 0;
+  rate_down = @logic ? 0 : $d_AKT1;
+}
+
+Node Proliferation {
+  logic = (!FOXO1);
+  rate_up = @logic ? $u_Proliferation : 0;
+  rate_down = @logic ? 0 : $d_Proliferation;
+}
+
+Node FOXO1 {
+  logic = (!AKT1);
+  rate_up = @logic ? $u_FOXO1 : 0;
+  rate_down = @logic ? 0 : $d_FOXO1;
+}
+
+Node PIP2 {
+  logic = (PTEN);
+  rate_up = @logic ? $u_PIP2 : 0;
+  rate_down = @logic ? 0 : $d_PIP2;
+}
+
+Node PLCG1 {
+  logic = (LCK);
+  rate_up = @logic ? $u_PLCG1 : 0;
+  rate_down = @logic ? 0 : $d_PLCG1;
+}
+
+Node IP3 {
+  logic = (PIP2 & PLCG1);
+  rate_up = @logic ? $u_IP3 : 0;
+  rate_down = @logic ? 0 : $d_IP3;
+}
+
+Node NFAT {
+  logic = (IP3);
+  rate_up = @logic ? $u_NFAT : 0;
+  rate_down = @logic ? 0 : $d_NFAT;
+}
+
+Node LCK {
+  logic = (TCR_b1);
+  rate_up = @logic ? $u_LCK : 0;
+  rate_down = @logic ? 0 : $d_LCK;
+}
+
+Node SOS {
+  logic = (LCK);
+  rate_up = @logic ? $u_SOS : 0;
+  rate_down = @logic ? 0 : $d_SOS;
+}
+
+Node DAG {
+  logic = (PIP2 & PLCG1 & !DGKA);
+  rate_up = @logic ? $u_DAG : 0;
+  rate_down = @logic ? 0 : $d_DAG;
+}
+
+Node PRKCQ {
+  logic = (CD28 & DAG);
+  rate_up = @logic ? $u_PRKCQ : 0;
+  rate_down = @logic ? 0 : $d_PRKCQ;
+}
+
+Node RASGRP {
+  logic = (!CD28 & DAG & IL2R_b1) | (CD28 & DAG);
+  rate_up = @logic ? $u_RASGRP : 0;
+  rate_down = @logic ? 0 : $d_RASGRP;
+}
+
+Node ERK1 {
+  logic = (SOS & RASGRP);
+  rate_up = @logic ? $u_ERK1 : 0;
+  rate_down = @logic ? 0 : $d_ERK1;
+}
+
+Node NFKB {
+  logic = (PRKCQ);
+  rate_up = @logic ? $u_NFKB : 0;
+  rate_down = @logic ? 0 : $d_NFKB;
+}
+
+Node JNK {
+  logic = (PRKCQ);
+  rate_up = @logic ? $u_JNK : 0;
+  rate_down = @logic ? 0 : $d_JNK;
+}
+
+Node FOS {
+  logic = (ERK1);
+  rate_up = @logic ? $u_FOS : 0;
+  rate_down = @logic ? 0 : $d_FOS;
+}
+
+Node AP1 {
+  logic = (JNK & FOS);
+  rate_up = @logic ? $u_AP1 : 0;
+  rate_down = @logic ? 0 : $d_AP1;
+}
+
+Node DGKA {
+  logic = (FOXO1 & NFAT & !IL2R_b1);
+  rate_up = @logic ? $u_DGKA : 0;
+  rate_down = @logic ? 0 : $d_DGKA;
+}
+
+Node CD25 {
+  logic = (!NFAT & FOXP3) | (NFAT & !NFKB & FOXP3) | (NFAT & NFKB & !AP1 & FOXP3) | (NFAT & NFKB & AP1);
+  rate_up = @logic ? $u_CD25 : 0;
+  rate_down = @logic ? 0 : $d_CD25;
+}
+
+Node IL2R_b1 {
+  // logic = (!IL2_ext & IL2R_b2) | (IL2_ext);
+
+  rate_up = $receptor_update * ($ExtIL2) ; // $ExtIL2 amplified speed of activation
+  rate_down = (IL2R_b2) ? 0 : $receptor_update*(1-$ExtIL2);
+}
+
+Node IL2R_b2 {
+  // logic = (IL2_ext & CD25 & IL2R_b1);
+  rate_up = (CD25 & IL2R_b1) ? $u_IL2R_b2*($ExtIL2) : 0; // IL2R_b2 can be activated if IL2R_b1 has been (partially) activated by $ExtIL2
+  rate_down = (CD25) ? $d_IL2R_b2*(1-$ExtIL2) : $d_IL2R_b2;
+}
+
+Node JAK3 {
+  logic = (IL2R_b1);
+  rate_up = @logic ? $u_JAK3 : 0;
+  rate_down = @logic ? 0 : $d_JAK3;
+}
+
+Node STAT5 {
+  logic = (JAK3);
+  rate_up = @logic ? $u_STAT5 : 0;
+  rate_down = @logic ? 0 : $d_STAT5;
+}
+
+Node IL2 {
+  logic = (NFAT & NFKB & AP1 & !STAT5 & !FOXP3);
+  rate_up = @logic ? $u_IL2 : 0; // production
+  rate_down = (IL2R_b1 | @logic) ? $d_IL2 : 0 ; // Receptor consume ligand in $ExtIL2
+}
+
+Node TGFBR {
+  // logic = (TGFB_ext);
+  rate_up = $receptor_update*($ExtTGFB); // $ExtTGFB amplified speed of activation
+  rate_down = $receptor_update*(1-$ExtTGFB); 
+}
+
+Node SMAD3 {
+  logic = (TGFBR);
+  rate_up = @logic ? $u_SMAD3 : 0;
+  rate_down = @logic ? 0 : $d_SMAD3;
+}
+
+Node FOXP3 {
+  logic = (FOXO1 & NFAT & AP1 & STAT5 & SMAD3);
+  rate_up = @logic ? $u_FOXP3 : 0;
+  rate_down = 0.0;
+}
+
+Node TGFB {
+  logic = (FOXP3);
+  rate_up = @logic ? $u_TGFB : 0; // Production
+  rate_down = (TGFBR | @logic) ? $d_TGFB : 0 ; // Receptor consumes ligand
+}
+
