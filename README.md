@@ -1,6 +1,9 @@
 # PhysiBoSS   
 Multiscale simulation of multi-cellular system
- 
+
+:warning: This version is not maintained anymore. For the latest version, please visit [https://github.com/PhysiBoSS/PhysiBoSS](https://github.com/PhysiBoSS/PhysiBoSS) :warning:
+
+
 Overview:
 
  * [Presentation](#presentation)
